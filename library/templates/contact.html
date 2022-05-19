@@ -1,0 +1,45 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}?{% now 'U' %}"></head>
+<body>
+{% include 'nav.html' %}
+<div class="contacts">
+  <h1>Contact</h1>
+  <div class="bio">
+    <lable>Bio</lable>
+    <p>I am Mikiyas Adere, ALX student. <br>  For foundation final project I try to develop online this library system. <br> I have BA degree in Logistics and Supply Chain Management but since I love computing I start studding Computer science. A good friend suggests me to join ALX school since he knows the interest I have in programming. ALX is the best online school I have ever seen, and they approach is good for student who want to know the software engineering environment and have a time to invest. <br> This is my second project on django web framework. My first project was on database management system for our sunday school. It will register all students, export and import list of student with their filled data, generate ID in PDF format, count with specified entity and generate reports and other functionality.</p>
+  </div>
+  <div class="contact-list">
+    <div class="cont">
+      <img src="{% static 'img/man.svg' %}" width="30px" alt="" />
+      <lable>Mikiyas Adere</lable>
+    </div>
+    <div class="cont">
+      <img src="{% static 'img/phone.svg' %}" width="30px" alt="" />
+      <lable>+251 92 16 2566</lable>
+    </div>
+    <div class="cont">
+      <img src="{% static 'img/email.svg' %}" width="30px" alt="" />
+      <lable>Mikiyasad86@gmail.com</lable>
+    </div>
+    <div class="cont">
+      <img src="{% static 'img/whatsapp.svg' %}" width="30px" alt="" />
+      <lable>+251 92 16 2566</lable>
+    </div>
+    <div class="cont">
+      <img src="{% static 'img/telegram.svg' %}" width="20px" alt="" />
+      <lable>@Mikiyasa</lable>
+    </div>
+    <div class="cont">
+      <img src="{% static 'img/github.svg' %}" width="20px" alt="" />
+      <lable>https://github.com/MikiyasA</lable>
+    </div>
+  </div>
+</div>
+</body>
+</html>

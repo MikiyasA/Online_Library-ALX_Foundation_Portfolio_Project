@@ -1,0 +1,56 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="{% static 'css/book.css' %}?{% now 'U' %}">
+</head>
+<body>
+{% include 'nav.html' %}
+    <!--- ******************************************************** -->
+{% for message in messages %}
+    <div class="alert">
+        <strong>{{message}}</strong>
+    </div>
+{% endfor %}
+
+<br>
+{% if request.user.is_authenticated %}
+  <div class="btns">
+    <div class="div-add">
+      <a class="btn-add" href="/addAuthor">Add Author</a>
+    </div>
+    <div class="div-add">
+      <a class="btn-add" href="/addShelf">Add Shelf</a>
+    </div>
+  </div>
+{%endif%}
+  <!--- ******************************************************** -->
+
+<div class="container">
+  <div class="filter">
+    <div>
+      <form>
+      <input class="search" id="search" name="q" type="text" placeholder="Search by all"/>
+      <button class="btn-search" name="submit" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="all-cont">
+    {% for shelf in queryset %}
+    <div class="cont-cntr">
+      <div class="cntr" width="200">
+        <a href="{% url 'updateShelf' shelf.shelf_id %}" class="img-edit"><img src="{% static 'img/edit.svg' %}" width="20px"></a>
+        <a href="{% url 'book' shelf.id %}"><img src="{{ shelf.cover.url }}" width="200" height="230" alt="Cover" /></a>
+        <a href="{% url 'book' shelf.id %}"><lable>{{shelf.category}}</lable></a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</body>
+</html>
+

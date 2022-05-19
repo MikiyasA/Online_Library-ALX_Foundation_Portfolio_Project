@@ -1,0 +1,43 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}?{% now 'U' %}">
+</head>
+<body>
+{% include 'nav.html' %}
+{% if request.user.is_authenticated %}
+<div class="post-btn">
+    <div class="div-add">
+      <a class="btn-add" href="/post">Post Blog</a>
+    </div>
+</div>
+{%endif%}
+<div class="container">
+    <div class="cont-post">
+        {% for post in queryset %}
+        <div class="post">
+            <h2>{{post.title}}</h2>
+            {% if post.photo.url != null %}
+            <img src="{{ post.photo.url }}">
+            {% endif %}
+            <p>{{post.description}}</p>
+        </div>
+        {%endfor%}
+    </div>
+    <div class="cont-new-book">
+        <h3>New added books</h3>
+        {% for book in bkQueryset %}
+        <div class="new-book">
+            <img src="{{ book.cover.url }}">
+            <label>{{ book.book_name }}</label>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+
+</body>
+</html>

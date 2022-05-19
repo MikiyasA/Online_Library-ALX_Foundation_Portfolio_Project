@@ -1,0 +1,23 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{% static 'css/add.css' %}?{% now 'U' %}">
+</head>
+<body>
+
+{% include 'nav.html' %}
+
+<div class="form">
+    <form method="POST", enctype="multipart/form-data" action="">{% csrf_token %}
+        {{form|crispy}}
+        <input class="btn-save" type="submit" value="Save"/>
+    </form>
+    <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+</body>
+</html>

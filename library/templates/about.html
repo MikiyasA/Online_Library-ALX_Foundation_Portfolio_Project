@@ -1,0 +1,23 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}?{% now 'U' %}">
+</head>
+<body>
+{% include 'nav.html' %}
+<div class="cont">
+  <div class="title">
+    <h1>Foundation Program <br> Portfolio Project</h1>
+  </div>
+  <div class="detail">
+    <p>This system is web based online library system developed using once of best python web framework called Django. Books are a light for life of human being, and this kind of system will give huge benefit to society. That’s why it inspires me to develop this system of ALX foundation portfolio project. </p>
+    <p>ALX is the best online school I have ever seen. The approach is learning by doing and it is hard way but it will enrich you to become complete package on the area. They will give you a projects with the dead line and give you some reference to tackle the project. However, it will request you to refer more document and this will help you to increase your knowledge in the area. If you don’t know any coding but you have time to invest and have interest on programming, then you will be software engineer with in only 12 months. If you want you to join, just click the link <a href="https://www.alxafrica.com/" target="_blank">hear</a> and find what you want. </p>
+    <p>Let’s back to this system, the first thing you see when you open the system is, home page which will list the post made by the user who have access. Then, when open book page, it will show you available shelves created to hold the books as per shelf category. `When you create shelves, please make sure to be specific. It will help you when you on categorizing the books. For example, `it is best creating python book shelf than programming book shelf. ` Then when you click the shelf, it will direct you to the list of books added in that shelf. Then the site has about and contact page for general information. There is also navigation to direct you to standard admin page. It will prevent you to write on address bar every time you want to access the admin page.</p>
+  </div>
+</div>
+</body>
+</html>

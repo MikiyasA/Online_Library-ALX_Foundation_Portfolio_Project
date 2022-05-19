@@ -1,0 +1,56 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="{% static 'css/book.css' %}?{% now 'U' %}">
+</head>
+<body>
+{% include 'nav.html' %}
+    <!--- ******************************************************** -->
+{% for message in messages %}
+    <div class="alert">
+        <strong>{{message}}</strong>
+    </div>
+{% endfor %}
+
+<br>
+{% if request.user.is_authenticated %}
+  <div class="btns">
+    <div class="div-add">
+      <a class="btn-add" href="/addShelf">Add Author</a>
+    </div>
+    <div class="div-add">
+      <a class="btn-add" href="/addBook">Add Book</a>
+    </div>
+  </div>
+{%endif%}
+  <!--- ******************************************************** -->
+
+<div class="container">
+  <div class="filter">
+    <div>
+      <form>
+      <input class="search" id="search" name="q" type="text" placeholder="Search"/>
+      <button class="btn-search" name="submit" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="all-cont">
+    {% for book in queryset %}
+    <div class="cont-cntr">
+      <div class="cntr" width="200">
+        <a href="{% url 'updateBook' book.book_id %}"><img class="img-edit" src="{% static 'img/edit.svg' %}" width="20px"></a>
+        <a href="{{ book.book.url }}"><img src="{{ book.cover.url }}" width="200" height="230" alt="Cover" /></a>
+        <a href="{{ book.book.url }}"><lable>{{book.book_name}}</lable></a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</body>
+</html>
