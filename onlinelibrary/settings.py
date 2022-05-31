@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'onlinelibrary.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'library',
+        'NAME': 'library_new',
         'USER': 'fydb',
         'PASSWORD': 'fy@2730db',
     }

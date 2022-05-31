@@ -4,14 +4,9 @@ from django.db import models
 
 
 def author_idno():
-    """To generate auto incriment book ID """
-    """fn = 'author_id'
-    idno = Author.objects.get_object_or_404(pk=0)
-    print("{} = {}".format(fn, type(fn)))
-    last = getattr(idno, fn)
-    print(last)"""
+    """To generate auto increment book ID """
 
-    prfx = "AUT"
+    prfx = "AUT"  # prefix of the ID
     last = Author.objects.all().last()
     if not last:
         aut_id = "{}{}".format(prfx, '0001')
@@ -19,11 +14,9 @@ def author_idno():
     last = str(last)
     last = last.replace(' - AUT', ', ')
     last = last.split(', ')
-    print(last)
     last = last[1]
     last = int(last)
-    aut_id = "{}{:04d}".format(prfx, (last+1))
-    print(aut_id)
+    aut_id = "{}{:04d}".format(prfx, (last + 1))
     return aut_id
 
 
@@ -41,8 +34,8 @@ class Author(models.Model):
 
 
 def shelf_idno():
-    """To generate auto incriment book ID """
-    prfx = "SLF"
+    """To generate auto increment book ID """
+    prfx = "SLF"  # prefix of the ID
     last = Shelf.objects.all().last()
     if not last:
         slf_id = "{}{}".format(prfx, '0001')
@@ -52,8 +45,7 @@ def shelf_idno():
     last = last.split(', ')
     last = last[1]
     last = int(last)
-    slf_id = "{}{:04d}".format(prfx, (last+1))
-    print(slf_id)
+    slf_id = "{}{:04d}".format(prfx, (last + 1))
     return slf_id
 
 
@@ -76,8 +68,8 @@ sex_choices = {
 
 
 def staff_idno():
-    """To generate auto incriment book ID """
-    prfx = "STF"
+    """To generate auto increment book ID """
+    prfx = "STF"  # prefix of the ID
     last = Staff.objects.all().last()
     if not last:
         stf_id = "{}{}".format(prfx, '0001')
@@ -87,8 +79,7 @@ def staff_idno():
     last = last.split(', ')
     last = last[1]
     last = int(last)
-    stf_id = "{}{:04d}".format(prfx, (last+1))
-    print(stf_id)
+    stf_id = "{}{:04d}".format(prfx, (last + 1))
     return stf_id
 
 
@@ -108,20 +99,18 @@ class Staff(models.Model):
 
 
 def book_idno():
-    """To generate auto incriment book ID """
-    prfx = "BK"
+    """To generate auto increment book ID """
+    prfx = "BK"   # prefix of the ID
     last = Book.objects.all().last()
     if not last:
         bk_id = "{}{}".format(prfx, '0001')
         return bk_id
-    print(last)
     last = str(last)
     last = last.replace(' - BK', ', ')
     last = last.split(', ')
     last = last[1]
     last = int(last)
-    bk_id = "{}{:04d}".format(prfx, (last+1))
-    print(bk_id)
+    bk_id = "{}{:04d}".format(prfx, (last + 1))
     return bk_id
 
 
@@ -149,7 +138,3 @@ class Blog(models.Model):
     description = models.CharField(max_length=10000, blank=False, null=True)
     photo = models.ImageField(upload_to='media', blank=True, null=True)
     post_date = models.DateTimeField(auto_now_add=True, auto_now=False, blank=False, null=True)
-
-
-
-

@@ -9,7 +9,7 @@
 </head>
 <body>
 {% include 'nav.html' %}
-    <!--- ******************************************************** -->
+    <!-- to display message when add and update -->
 {% for message in messages %}
     <div class="alert">
         <strong>{{message}}</strong>
@@ -17,18 +17,20 @@
 {% endfor %}
 
 <br>
-{% if request.user.is_authenticated %}
+{% if request.user.is_authenticated %} <!-- to filter out display if not authenticated  -->
   <div class="btns">
+    <!-- add author button -->
     <div class="div-add">
       <a class="btn-add" href="/addAuthor">Add Author</a>
     </div>
+    <!-- add shelf button -->
     <div class="div-add">
       <a class="btn-add" href="/addShelf">Add Shelf</a>
     </div>
   </div>
 {%endif%}
-  <!--- ******************************************************** -->
 
+  <!-- search form -->
 <div class="container">
   <div class="filter">
     <div>
@@ -38,12 +40,14 @@
       </form>
     </div>
   </div>
-
+<!-- to list shelves -->
   <div class="all-cont">
     {% for shelf in queryset %}
     <div class="cont-cntr">
       <div class="cntr" width="200">
+        {% if request.user.is_authenticated %} <!-- view edit icon with function for only authenticated user -->
         <a href="{% url 'updateShelf' shelf.shelf_id %}" class="img-edit"><img src="{% static 'img/edit.svg' %}" width="20px"></a>
+        {%endif%}
         <a href="{% url 'book' shelf.id %}"><img src="{{ shelf.cover.url }}" width="200" height="230" alt="Cover" /></a>
         <a href="{% url 'book' shelf.id %}"><lable>{{shelf.category}}</lable></a>
       </div>

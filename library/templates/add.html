@@ -10,13 +10,13 @@
 <body>
 
 {% include 'nav.html' %}
-
+    <!-- forms to add, can be used for book, shelf author or any form -->
 <div class="form">
     <form method="POST", enctype="multipart/form-data" action="">{% csrf_token %}
         {{form|crispy}}
         <input class="btn-save" type="submit" value="Save"/>
     </form>
-    <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <!-- to display the form on whole page and prevent background to  be damaged view -->
 </div>
 
 </body>

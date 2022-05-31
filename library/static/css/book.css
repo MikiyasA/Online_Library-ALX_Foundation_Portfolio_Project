@@ -99,6 +99,7 @@
 }
 .cntr img {
   margin-bottom: 7px;
+  border-radius: 8px;
 }
 .img-edit {
     text-align: end;

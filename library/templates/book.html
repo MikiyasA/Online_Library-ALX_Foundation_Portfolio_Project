@@ -9,7 +9,7 @@
 </head>
 <body>
 {% include 'nav.html' %}
-    <!--- ******************************************************** -->
+    <!-- to display message when add and update -->
 {% for message in messages %}
     <div class="alert">
         <strong>{{message}}</strong>
@@ -17,18 +17,20 @@
 {% endfor %}
 
 <br>
-{% if request.user.is_authenticated %}
+{% if request.user.is_authenticated %} <!-- to filter out display if not authenticated  -->
   <div class="btns">
-    <div class="div-add">
+     <!-- add author button -->
+   <div class="div-add">
       <a class="btn-add" href="/addShelf">Add Author</a>
     </div>
+    <!-- add book button -->
     <div class="div-add">
       <a class="btn-add" href="/addBook">Add Book</a>
     </div>
   </div>
 {%endif%}
-  <!--- ******************************************************** -->
 
+  <!-- search form -->
 <div class="container">
   <div class="filter">
     <div>
@@ -39,12 +41,14 @@
     </div>
   </div>
 
-
+<!-- to list shelves -->
   <div class="all-cont">
     {% for book in queryset %}
     <div class="cont-cntr">
       <div class="cntr" width="200">
+        {% if request.user.is_authenticated %} <!-- view edit icon with function for only authenticated user -->
         <a href="{% url 'updateBook' book.book_id %}"><img class="img-edit" src="{% static 'img/edit.svg' %}" width="20px"></a>
+        {%endif%}
         <a href="{{ book.book.url }}"><img src="{{ book.cover.url }}" width="200" height="230" alt="Cover" /></a>
         <a href="{{ book.book.url }}"><lable>{{book.book_name}}</lable></a>
       </div>

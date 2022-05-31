@@ -1,7 +1,12 @@
-# Online Library - ALX Foundation Portfolio Project
+# Online Library 
 
-## Setup
+### Introduction
+This system is web based online library system developed using once of best python web framework called Django. Books are a light for life of human being, and this kind of system will give huge benefit to society. That’s why it inspires me to develop this system of foundation portfolio project. 
 
++ [Blog Article](https://www.linkedin.com/posts/mikiyas-adere-373258225_onlineabrlibraryabrbyabrdjango-activity-6937147465087254528-HCTe?utm_source=linkedin_share&utm_medium=member_desktop_web) - Final project blog article
++ [LinkedIn](https://www.linkedin.com/in/mikiyas-adere-373258225) - Mikiyas Adere
+
+### Installation
 The first thing to do is to clone the repository:
 
 ```sh
@@ -30,7 +35,7 @@ python3 manage.py runserver <port_no_you_want>
 ```
 And navigate to `http://127.0.0.1:8000/`. or `http://127.0.0.1:<port_no_you_enter>/`
 
-## Setting 
+#### Setting 
 
 You can deploy this system with two different database system, MySql or sqlite. Just open setting.py file located in `../onlinelibrary` directory make adjustment as be below.
 
@@ -55,14 +60,11 @@ DATABASES = {
 }
 ```
 
-## Bird view of the system
+### Usage
+The first thing you see when you open the system is, home page which will list the post made by the user who have access. Then, when open book page, it will show you available shelves created to hold the books as per shelf category. `When you create shelves, please make sure to be specific. It will help you when you on categorizing the books.` For example, `it is best creating python bookshelf than programming book shelf. ` Then when you click the shelf, it will direct you to the list of books added in that shelf. Then the site has about and contact page for general information. There is also navigation to direct you to standard admin page. It will prevent you to write on address bar every time you want to access the admin page.
 
-This system is web based online library system developed using once of best python web framework called Django. Books are a light for life of human being, and this kind of system will give huge benefit to society. That’s why it inspires me to develop this system of foundation portfolio project. 
-The first thing you see when you open the system is, home page which will list the post made by the user who have access. Then, when open book page, it will show you available shelves created to hold the books as per shelf category. `When you create shelves, please make sure to be specific. It will help you when you on categorizing the books.` For example, `it is best creating python book shelf than programming book shelf. ` Then when you click the shelf, it will direct you to the list of books added in that shelf. Then the site has about and contact page for general information. There is also navigation to direct you to standard admin page. It will prevent you to write on address bar every time you want to access the admin page. 
+### Related projects
+> Database Management System for Orthodox church Sunday school.
 
-## DEVELOPER
-
-Mikiyas Adere 
-[Github](https://github.com/MikiyasA) - https://github.com/MikiyasA
-[Gmail](mailto:Mikiyasad86@gmail.com) -  Mikiyasad86@gmail.com
-[Phone](+251921162566) - +251921162566
+### Licensing
+****Free Software, developed for portfolio project****

@@ -16,17 +16,17 @@
         <li><a href="/shelf">Books</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contacts">Contact</a></li>
-      {% if request.user.is_authenticated %}
+      {% if request.user.is_superuser %} <!-- display admin nav if the user is only admin -->
         <li><a href="/admin">Admin Site</a></li
         <li><a class="user" href="/accounts/logout">User: {{user}}</a></li>
       {% else %}
-        <li><a class="user" href="/admin/login">Login</a></li>
+        <li><a class="user" href="/accounts/login">Login</a></li>
       {% endif %}
       </ul>
     </div>
  </nav>
 
-
+<!-- javascript to open and close nav bar in mobile view -->
     <script>
         const menuBtn = document.getElementById('id-menu')
               nav = document.querySelector('nav')

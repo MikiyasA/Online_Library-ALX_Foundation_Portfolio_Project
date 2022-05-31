@@ -5,10 +5,10 @@ from django.conf import settings
 from django.contrib import admin
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('post', views.post_blog, name='post'),
+    path('', views.home, name='home'),  # for homepage
+    path('post', views.post_blog, name='post'),  # to post a blog
 
-    path('book/<str:pk>/', views.book, name='book'),
+    path('book/<str:pk>/', views.book, name='book'),  # to list book
     path('addBook', views.add_book, name='addBook'),
     path('updateBook/<str:pk>/', views.update_book, name='updateBook'),
 
