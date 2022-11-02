@@ -1,7 +1,10 @@
 # Online Library 
-
-### Introduction
+![](screenshot/Screenshot from 2022-05-19 13-42-39.png)
+### Description
 This system is web based online library system developed using once of best python web framework called Django. Books are a light for life of human being, and this kind of system will give huge benefit to society. That’s why it inspires me to develop this system of foundation portfolio project. 
+
+### About Me 
+My name is Mikiyas Adere, ALX graduate with software engineer, backend specialized. I do have experience in Django and I did more than 3 projects, including this one, with MySQL database and HTML, CSS & some JavaScript. I am studying Computer Science to be graduated on 2023. I'm also have BA degree in Logistics and Supply Chain Management with 5+ years experience as Procurement Officer. I love coding and I want to be web and application developer. I’m passionate about creating truly beautiful, efficient and problem solving softwares. 
 
 + [Blog Article](https://www.linkedin.com/posts/mikiyas-adere-373258225_onlineabrlibraryabrbyabrdjango-activity-6937147465087254528-HCTe?utm_source=linkedin_share&utm_medium=member_desktop_web) - Final project blog article
 + [LinkedIn](https://www.linkedin.com/in/mikiyas-adere-373258225) - Mikiyas Adere
@@ -65,6 +68,8 @@ The first thing you see when you open the system is, home page which will list t
 
 ### Related projects
 > Database Management System for Orthodox church Sunday school.
+
+> [E-Learning System, ALX Webstack Portfolio Project](https://github.com/MikiyasA/ALX-Webstack-Portfolio_Project_E-Learning_System)
 
 ### Licensing
 ****Free Software, developed for portfolio project****

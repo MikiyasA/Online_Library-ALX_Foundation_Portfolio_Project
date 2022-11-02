@@ -107,7 +107,6 @@ def update_shelf(request, pk):
         form = ShelfCreateForm(request.POST, request.FILES, instance=queryset)
         if form.is_valid():
             form.save()
-            print("sucess")
             messages.success(request, "Shelf successfully updated")
             return redirect('/shelf')
     context = {
